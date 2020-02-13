@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Movie from "./Movie";
+import "./App.css";
+
 /* 
 https://www.npmjs.com/package/axios 에서 axios에 관한 것을 알 수 있습니다.
 axios는 네트워크로부터 데이터를 요청 할 수 있게 하는 package 입니다.
@@ -33,11 +35,16 @@ class App extends React.Component {
   }
   render() {
     const { isLoading, movies } = this.state;
+    // 현 클래스에 있는 state를 render함수 내 지역변수에 할당 합니다.
     return (
-      <div>
-        {isLoading
-          ? "Loading..."
-          : movies.map(movie => {
+      <section class="container">
+        {isLoading ? (
+          <div class="loader">
+            <span class="loader_text">Loading...</span>
+          </div>
+        ) : (
+          <div class="movies">
+            {movies.map(movie => {
               return (
                 <Movie
                   key={movie.id}
@@ -49,7 +56,9 @@ class App extends React.Component {
                 />
               );
             })}
-      </div>
+          </div>
+        )}
+      </section>
     );
   }
 }
