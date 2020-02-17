@@ -37,13 +37,13 @@ class App extends React.Component {
     const { isLoading, movies } = this.state;
     // 현 클래스에 있는 state를 render함수 내 지역변수에 할당 합니다.
     return (
-      <section class="container">
+      <section className="container">
         {isLoading ? (
-          <div class="loader">
-            <span class="loader_text">Loading...</span>
+          <div className="loader">
+            <span className="loader_text">Loading ...</span>
           </div>
         ) : (
-          <div class="movies">
+          <div className="movies">
             {movies.map(movie => {
               return (
                 <Movie
@@ -53,6 +53,8 @@ class App extends React.Component {
                   title={movie.title}
                   summary={movie.summary}
                   poster={movie.medium_cover_image}
+                  genres={movie.genres}
+                  runtime={movie.runtime}
                 />
               );
             })}
