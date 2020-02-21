@@ -1,0 +1,15 @@
+.about_container {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.about_container p {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0.4em;
+  background-color: white;
+  box-shadow: 16px 8px 60px 0px rgba(128, 128, 128, 0.541);
+}

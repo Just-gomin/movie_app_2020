@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./Movie.css";
 
 function Movie({ year, title, summary, poster, genres, runtime }) {
+  // Home.js 에서 가져온 data들을 가지고 화면에 보이도록합니다.
   return (
     <div className="movie">
       <img src={poster} alt={title} title={title} />
