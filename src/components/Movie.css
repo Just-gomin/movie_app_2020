@@ -10,6 +10,7 @@
   box-shadow: 0 1em 2em -0.5em rgba(50, 50, 93, 0.25),
     0 0.5em 1em -0.5em rgba(0, 0, 0, 0.3),
     0 -0.5em 1em -0.5em rgba(0, 0, 0, 0.025);
+  min-width: 315px;
 }
 
 .movie img {
@@ -41,15 +42,18 @@
 .movie ul {
   margin: 0em;
   padding: 0em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .movie li {
-  display: inline;
+  list-style: none;
   padding: 0em;
   margin-left: 0em;
   margin-right: 0.4em;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
 }
 
 .movie p {

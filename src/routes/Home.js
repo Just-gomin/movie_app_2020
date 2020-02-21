@@ -30,10 +30,24 @@ class Home extends React.Component {
     // setState에서 state에 있는 변수 이름과 해당 변수와 대응 시킬 변수의 이름이 같다면
     // setState({movies:movies}) 대신에 setState({movies})를 사용할 수 있다.
   };
+
+  resizeWindow = () => {
+    const currWidth = window.outerWidth;
+    const movies = document.querySelector(".movies");
+    console.log(movies);
+    if (currWidth <= 800) {
+      movies.classList.add("small-screen");
+    } else {
+      movies.classList.remove("small-screen");
+    }
+  };
+
   componentDidMount() {
     this.getMovies();
   }
+
   render() {
+    window.addEventListener("resize", this.resizeWindow);
     const { isLoading, movies } = this.state;
     // 현 클래스에 있는 state를 render함수 내 지역변수에 할당 합니다.
     return (
